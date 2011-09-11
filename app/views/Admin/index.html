@@ -1,0 +1,15 @@
+#{extends 'CRUD/layout.html' /}
+ 
+<h3>Welcome ${user}</h3>
+
+<ul id="adminMenu">
+   #{secure.check 'admin'}
+         <h3><a href="@{Instructors.list()}">Instructors</a></h3>
+         <h3><a href="@{Courses.list()}">Courses</a></h3>
+         <h3><a href="@{Participants.list()}">Participants</a></h3>
+         <h3><a href="@{Locations.list()}">Locations</a></h3>
+         <h3><a href="@{Books.list()}">Books</a></h3>
+         <h3><a href="@{Presentations.list()}">Presentations</a></h3>
+         <h3><a href="@{Sites.list()}">Websites</a></h3>
+    #{/secure.check}
+</ul>	        

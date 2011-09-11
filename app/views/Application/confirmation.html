@@ -1,0 +1,17 @@
+#{extends 'main.html' /}
+#{set title:'Confirmation' /}
+   		
+#{if flash.success}
+	<h2>Registration confirmation</h2>
+    <p class="success">${flash.success}</p>	
+	<p>If you have any questions regarding the course please feel free to contact us</p>
+	
+	<h3>Contact information: </h3>
+	<p>Email: ketil@miles.no</p>
+	<p>Phone: 971 72 278</p>
+#{/if}
+		
+
+<span> 
+   <a href="@{Application.index()}">Back to the main page</a> 
+</span> 

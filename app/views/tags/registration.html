@@ -1,0 +1,78 @@
+<h2>Registration</h2>
+
+<p>
+#{ifErrors}
+   <h3>Oops! Looks like we're missing some information. Please try again.</h3>
+#{/ifErrors}
+</p>
+
+	#{form @confirmation()}
+		#{field 'courseName'}
+			<input type="hidden" name="courseName" id="courseName" value="Kanban Training Class"/>
+			<table>
+		#{/field}
+		#{field 'name'}
+		<tr>
+			
+			<td>Your name *</td>
+	        <td>
+	        <input type="text" name="${field.name}" size="20" value="${flash['name']}" /> 
+	         <span class="error">#{error 'name' /}</span>
+	    	</td>
+	    	#{/field}
+	    </tr>
+	    <tr>
+		    #{field 'email'}
+		    <td>
+		       E-mail * </td>
+		    <td>
+		    	<input type="text" name="${field.name}" size="20" value="${flash['email']}" class="${field.errorClass}" />
+		    	<span class="error">#{error 'email' /}</span>
+		    </td>
+	    </tr>
+	    #{/field}
+	    #{field 'telephonenumber'}
+	    <tr>
+	        <td>Telephone number</td>
+	        <td>
+	        	<input type="text" name="${field.name}" size="20" value="${flash['telephonenumber']}"/>
+	        	<span class="error">#{error 'telephonenumber' /}</span>
+	        </td>
+	    </tr>
+	    #{/field}
+	    #{field 'company'}
+	    <tr>
+	        <td>Company *</td>
+	        <td><input type="text" name="${field.name}" size="20" value="${flash['company']}"/></td>
+	    </tr>
+	    #{/field}
+	    #{field 'address'}
+	    <tr>
+	    	<td>
+	        	Invoice address *:
+	        </td>
+	        <td>
+	        	<textarea name="${field.name}" >${flash['address']}</textarea>
+	        	<span class="error">#{error 'address' /}</span>
+	       </td>
+	    </tr>
+	    #{/field}
+	    #{field 'orgnumber'}
+	    <tr>
+	        <td>Organisation number:</td>
+	        <td><input type="text" name="${field.name}" size="20" value="${flash['orgnumber']}"/></td>
+	    </tr>
+	    #{/field}
+	    </table>
+	    <p>
+	        <input type="submit" value="Sign up" />
+	    </p>
+	    
+	#{/form} 
+	
+	<h2>Terms</h2>
+	<ul>
+		<li>The price includes lunch, snacks and course material</li>
+		<li>Cancellation may be done without penalty up to 1 month before the course.</li>
+		<li>Course registration may be transfered to another person</li>
+	</ul>

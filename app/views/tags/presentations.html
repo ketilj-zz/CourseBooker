@@ -1,0 +1,10 @@
+<h2>Presentations</h2>
+
+A selection of past presentations on Kanban
+ 
+<ul>
+	#{list items:_presentations, as:'presentation'}
+		<li><a href="${presentation.url}">${presentation.name} </a> - ${presentation.presenter.name}, ${presentation.event}</li>
+	#{/list}
+</ul>
+

@@ -1,0 +1,28 @@
+#{extends 'main.html' /}
+#{set title:'Miles Course' /}
+
+<div id="mainColumn"><a name="mainColumnLink"></a>
+<div class="contentIndentContainer">
+<div id="kursVisning"><a href="http://www.limitedwipsociety.org/"><img
+	height="129" width="97" src="@{'/public/images/yeswekanbansm.png'}"
+	title="Limited WIP society" alt=""></img></a>
+<div class="textController">
+
+#{if course.isFull()}
+	<strong>Sorry, the maximum number of participants for this seminar has been reached. </strong>
+#{/if}
+#{shiftaltctrl course: course /}
+
+</div>
+<div id="medarbeiderLinks">
+	
+	#{if course.isNotFull()} 
+		#{seminarregistration course: course /}
+	#{/if} 
+	
+</div>
+#{contact /}
+</div>
+</div>
+</div>
+<div id="aside"><a name="asideLink"></a> #{sidebar course: course/}</div>

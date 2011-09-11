@@ -1,0 +1,35 @@
+*{ You can use plain selenium command using the selenium tag }*
+
+#{selenium}
+    // Open the home page, and check that no error occured
+    open('/')
+    waitForPageToLoad(1000)
+    assertNotTitle('Application error')
+#{/selenium}
+
+#{selenium}
+	open(/)
+	waitForPageToLoad(1000)
+	assertTextPresent('Registration')
+	type('name', 'Frode Frosk')
+	type('email','frode@frosk.no')
+	type('address','Froskeveien 3')
+	type('company', froskene As')
+	clickAndWait('css=input[type=submit]')
+	assertTextPresent('Thank you for registering for the Kanban Training Class.')
+#{/selenium}
+
+#{selenium}
+	open(/)
+	waitForPageToLoad(1000)
+	assertTextPresent('Kanban Training Class')
+#{/selenium}
+
+#{selenium}
+	open(/)
+	waitForPageToLoad(1000)
+	clickAndWait(link=Instructor)
+	assertTextPresent('Kanban Buzz')
+	assertTextPresent('Books')
+	assertTextPresent('Presentations')
+#{/selenium}

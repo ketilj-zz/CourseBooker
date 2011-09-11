@@ -1,0 +1,30 @@
+#{extends 'main.html' /}
+#{set title:'Miles Course' /}
+
+<div id="mainColumn"><a name="mainColumnLink"></a>
+<div class="contentIndentContainer">
+<div id="kursVisning"><a href="http://www.limitedwipsociety.org/"><img
+	height="129" width="97" src="@{'/public/images/KanbanBook.jpg'}"
+	title="Limited WIP society" alt=""></img></a>
+<div class="textController">
+
+#{if course.isFull()}
+	#{registerinterest /} 
+#{/if} 
+		
+#{kanbantraining course: course /}
+
+</div>
+<div id="medarbeiderLinks">
+	#{if course.isNotFull()} 
+		#{courseoutline /}
+		#{registration/} 
+	#{/if} 
+</div>
+#{contact /}
+</div>
+</div>
+</div>
+<div id="aside"><a name="asideLink"></a> #{sidebar course: course/}</div>
+
+

@@ -1,0 +1,29 @@
+#{extends 'main.html' /}
+#{set title:'Instructor' /}
+
+
+<div id="mainColumn"><a name="mainColumnLink"></a>
+<div class="contentIndentContainer">
+<div id="kursVisning">
+	<a href="${instructor?.website}"><img height="215" width="162" src="@{Application.getPicture(instructor?.id)}" title="David J. Anderson" alt=""></img></a>
+
+<div class="textController">
+	<h1>${instructor?.name}</h1>
+	
+	<p>${instructor.resume}</p>
+	
+	<p>${instructor.bio}</p>
+
+	#{presentations presentations: instructor.presentations /}	
+
+	<p></p>
+	#{listBooks books: instructor.books /}
+
+</div>
+
+</div>
+</div>
+</div>
+<div id="aside"><a name="asideLink"></a>
+	#{twitterbuzz /}
+</div>

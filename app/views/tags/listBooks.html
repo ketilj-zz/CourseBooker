@@ -1,0 +1,13 @@
+<h2>Books</h2>
+<p>
+		<ul id="bookList">
+		#{list items:_books, as:'book'}
+			<li>  	
+  				<a href="${book.externalUrl}">
+				<img src="@{InstructorController.renderImage(book?.imageUrl)}" title="${book.title}" alt=""></img>
+				</a>
+				<a href="${book.externalUrl}">${book.title}</a>
+			 </li> 
+    	#{/list}
+    	</ul>	
+</p>

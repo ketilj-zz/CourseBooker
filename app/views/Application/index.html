@@ -1,0 +1,18 @@
+#{extends 'main.html' /}
+#{set title:'Miles Course' /}
+
+<div id="mainColumn"><a name="mainColumnLink"></a>
+<div class="textController">
+
+	<h1>Courses</h1>
+	<ul>
+	#{list items:courses, as:'course'}
+		<li>${course.name}  ${course.startDate}</li>
+	#{/list}
+	</ul>
+			
+
+</div>
+</div>
+
+

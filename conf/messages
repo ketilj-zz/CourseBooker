@@ -1,0 +1,13 @@
+# You can specialize this file for each language.
+# For example, for French create a messages.fr file
+#
+
+name=Name
+startDate=Start date
+endDate=End date
+description=Description
+courseHolder=Instructor
+maxNumberOfParticipants=Max number of participants
+post=Related post
+price=Price
+earlyBird=Early bird

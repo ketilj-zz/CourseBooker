@@ -1,0 +1,46 @@
+<h2>Register for Seminar</h2>
+
+#{form @Application.registerForSeminar()}
+		<input type="hidden" name="courseName" id="courseName" value="${_course.name}"/>
+		<table>
+	#{field 'name'}
+	<tr>
+		
+		<td>Navn</td>
+        <td>
+        <input type="text" name="${field.name}" size="20" value="${flash['name']}" /> 
+         <span class="error">#{error 'name' /}</span>
+    	</td>
+    	#{/field}
+    </tr>
+    <tr>
+	    #{field 'email'}
+	    <td>
+	       E-post </td>
+	    <td>
+	    	<input type="text" name="${field.name}" size="20" value="${flash['email']}" class="${field.errorClass}" />
+	    	<span class="error">#{error 'email' /}</span>
+	    </td>
+    </tr>
+    #{/field}
+    #{field 'telephonenumber'}
+    <tr>
+        <td>Telefon </td>
+        <td>
+        	<input type="text" name="${field.name}" size="20" value="${flash['telephonenumber']}"/>
+        	<span class="error">#{error 'telephonenumber' /}</span>
+        </td>
+    </tr>
+    #{/field}
+     #{field 'company'}
+    <tr>
+        <td>Company </td>
+        <td><input type="text" name="${field.name}" size="20" value="${flash['company']}"/></td>
+    </tr>
+    #{/field}
+    </table>
+    <p>
+        <input type="submit" value="Register" />
+    </p>
+
+#{/form} 

@@ -1,0 +1,88 @@
+# you describe your data using the YAML notation here
+# and then load them using Fixtures.load("data.yml")
+
+Instructor(David):
+   name: David J. Anderson
+   resume: >
+             Father of Kanban-style software development and one of the world's most exprienced practitioners. As a founder of the Lean Software and System consortium, David is constantly pushing the limit and the Agile community with him. David is also a pioneer of Real options theory and FDD (Feature Driven Development).
+   twitterId: agilemanager
+   website: http://www.agilemanagement.net
+   image:   
+   largeImage:
+   books: Kanban,agilemanagement
+   
+Book(Kanban):
+   title: Kanban - Successful Evolutionary Change For Your Technology Business
+   image: KanbanBook.jpg
+   author: David
+   
+Book(agilemanagement):
+   title: Agile Management for Software Engineering
+   image: agilemanagement.jpg
+   author: David 
+   
+Presentation(less2010):
+    title: Bringing Excellence to Service Delivery
+    when: 2010-10-17
+    where: Helsinki
+    presentationUrl: http://www.cs.helsinki.fi/en/video/anderson
+    presenter: David
+
+Location(Bristol):
+   name: Bristol Hotel
+   telephoneNumber: +47 22 82 60 00
+   address: Kristian IV's gate 7
+   postal: 0164 Oslo
+   map: http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=Kristian+IV's+gate+7+oslo&sll=37.0625,-95.677068&sspn=38.775203,78.662109&ie=UTF8&hq=&hnear=Kristian+IVs+gate+7,+Sentrum,+0164+Oslo,+Norway&ll=59.913429,10.740681&spn=0.012779,0.025749&z=14&output=embed
+   mapUrl: http://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=Kristian+IV's+gate+7+oslo&sll=37.0625,-95.677068&sspn=38.775203,78.662109&ie=UTF8&amp;hq=&hnear=Kristian+IVs+gate+7,+Sentrum,+0164+Oslo,+Norway&ll=59.913429,10.740681&spn=0.012779,0.025749&z=14
+   url: http://www.thonhotels.no/hoteller/land/norge/oslo/bristol/?gclid=cmrlnvny8aucfzga3godvdwrpq
+
+Course(kanbantraining):
+   name: Kanban Training Class
+   startDate: 2011-03-28
+   endDate: 2011-03-29
+   courseHolder: David J. Anderson
+   maxNumberOfParticipants: 20
+   price: 13000
+   earlyBird: 12000
+   description: >
+                This is a description
+   instructor: David
+   location: Bristol
+
+Course(Kanban Seminar):
+   name: SHIFT-ALT-CTRL Seminar
+   startDate: 2011-03-30
+   endDate: 2011-03-30
+   courseHolder: David J. Anderson
+   maxNumberOfParticipants: 50
+   price: 0
+   earlyBird: 12000
+   description: >
+                This is a description
+   instructor: David
+   location: Bristol
+   
+Course(SmallCourse):
+   name: Small Course
+   startDate: 2011-04-21
+   endDate: 2011-04-28
+   maxNumberOfParticipants: 1
+   price: 1000
+   earlyBird: 500
+   earlyBirdEndDate: 2011-02-01
+   description: >
+                This is a very small course
+  
+Participant(ketil):
+   name: Ketil Jensen
+   company: Miles Oslo
+   email: ketil@miles.no
+   paymentReceived: false
+   billed: false
+   
+User(ketil):
+   fullName: Ketil Jensen
+   email: ketil@miles.no
+   isAdmin: true
+   password: aa11BBL02         

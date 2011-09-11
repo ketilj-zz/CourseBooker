@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Administration</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" type="text/css" media="screen" href="@{'/public/stylesheets/global.css'}">
+        #{get 'moreStyles' /}
+        <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
+        <script src="@{'/public/javascripts/jquery-1.4.2.min.js'}" type="text/javascript" charset="utf-8"></script>
+        #{get 'moreScripts' /}
+        <link href="http://www.miles.no/_public/shared/styles/print.css?_ts=12806bab113"
+            rel="stylesheet"
+            type="text/css"
+            media="print" /> 
+         <link rel="SHORTCUT ICON" href="/_public/shared/images//miles.ico" />
+    </head>
+    <body id="frontPage">
+    	<div id="frame"> 
+        	 <div id="header"> 
+            	<h1 xmlns=""> 
+	               	<a href="/"> 
+	                  <img src="http://www.miles.no/_public/shared/images/miles_logo.jpg?_ts=12806bab9bc"
+	                       alt="Miles AS logo"
+	                       title="Til forsiden"></img> 
+	               	</a> 
+            	</h1> 
+            	<a xmlns="" name="navLink"></a> 
+            		<p xmlns="" id="toppLinks"> 
+                    	<a href="@{Secure.logout()}">Log out</a>
+              		</p>
+       		</div>	
+        	<div id="banner">
+        		<div style="background-image: url('http://www.miles.no/Forside/_image/729.png?_encoded=2f66666666666678302f35382f&amp;_ts=12a5bc8bda7');" class="imageContainer"> 
+		   			<div class="contentIndentContainer"> 
+		      			<h2 class="lineOne">Miles Course</h2> 
+		      			<h3 class="lineTwo"><br></br></h3>
+		      			<h2 class="lineThree">&nbsp;Administration</h2>
+		   			</div> 
+				</div>
+			</div>
+			<div id="contentContainer"> 
+	            <div id="breadcrumbContainer"> 
+	               <div class="contentIndentContainer"> 
+	                  <div class="breadcrumb"><a href="http://miles.no">Miles</a>  
+	                     				&gt; <strong>Course</strong>
+	                  </div> 
+	               </div> 
+	            </div> 
+	        
+	        <div id="mainColumn"><a name="mainColumnLink"></a><div class="contentIndentContainer"><div id="medarbeiderVisning"> 
+	    		#{doLayout /}
+	        	<ul id="adminMenu">
+                #{secure.check 'admin'}
+                    <!-- <li class="${request.controller == 'Courses' ? 'selected' : ''}">
+                        <a href="@{Courses.list()}">Courses</a>
+                    </li>
+                    <li class="${request.controller == 'Participants' ? 'selected' : ''}">
+                        <a href="@{Participants.list()}">Participants</a>
+                    </li>
+                     -->
+                     <h2><a href="@{Instructors.list()}">Instructors</a></h2>
+                     <h2><a href="@{Courses.list()}">Courses</a></h2>
+                     <h2><a href="@{Participants.list()}">Participants</a></h2>
+                     <h2><a href="@{Locations.list()}">Locations</a></h2>
+                     
+                #{/secure.check}
+            </ul>	            
+   			
+		</div></div> 
+         </div>
+         <div id="aside"><a name="asideLink"></a>
+         	<div class="contentIndentContainer">
+         		
+         	</div>
+         </div> 
+         <div id="footer"><a name="footerLink" class="footerLink"></a><div class="contentIndentContainer"> 
+                $(function() {
+        $("#contact").live('click', function(event) {
+            $(this).addClass("selected").parent().append('<div class="messagepop pop"><form method="post" id="new_message" action="/messages"><p><label for="email">Your email or name</label><input type="text" size="30" name="email" id="email" /></p><p><label for="body">Message</label><textarea rows="6" name="body" id="body" cols="35"></textarea></p><p><input type="submit" value="Send Message" name="commit" id="message_submit"/> or <a class="close" href="/">Cancel</a></p></form></div>');
+            $(".pop").slideFadeToggle()
+            $("#email").focus();
+            return false;
+        });
+
+        $(".close").live('click', function() {
+            $(".pop").slideFadeToggle();
+            $("#contact").removeClass("selected");
+            return false;
+        });
+    });
+
+    $.fn.slideFadeToggle = function(easing, callback) {
+        return this.animate({ opacity: 'toggle', height: 'toggle' }, "fast", easing, callback);
+    };
+    		<a href="/contact" id="contact">Contact Us</a>
+         </div> 
+     </div> 
+        	</div>
+        </div>
+    </body>
+</html>
+

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>#{get 'title' /}</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" type="text/css" media="screen" href="@{'/public/stylesheets/global.css'}">
+        #{get 'moreStyles' /}
+        <link rel="shortcut icon" type="image/png" href="@{'/public/images/miles.png'}">
+        <script src="@{'/public/javascripts/jquery-1.4.2.min.js'}" type="text/javascript" charset="utf-8"></script>
+        
+        #{get 'moreScripts' /}
+    </head>
+    <body id="standardPage">
+    	<div id="frame"> 
+        	 <div id="header"> 
+            	<h1 xmlns=""> 
+	               	<a href="http://www.miles.no"> 
+	                  <img src="http://www.miles.no/_public/shared/images/miles_logo.jpg?_ts=12806bab9bc"
+	                       alt="Miles AS logo"
+	                       title="Til forsiden"></img> 
+	               	</a> 
+            	</h1> 
+            	<a xmlns="" name="navLink"></a> 
+            <p xmlns="" id="toppLinks"> 
+                     <a target="_blank" href="http://twitter.com/miles_no"
+                        title="Følg Miles på Twitter"> 
+                        <img src="@{'/public/images/twitter.gif'}" alt="Twitter ikon"></img> 
+                     </a> 
+                     <a target="_blank" href="http://www.linkedin.com/companies/miles-as"
+                        title="Besøk Miles på LinkedIn"> 
+                        <img src="@{'/public/images/linkedin.gif'}" alt="LinkedIn ikon"></img> 
+                     </a> 
+              </p>
+       		</div>	
+        	<div id="banner">
+        		<div style="background-image: url('http://www.miles.no/Forside/_image/729.png?_encoded=2f66666666666678302f35382f&amp;_ts=12a5bc8bda7');" class="imageContainer"> 
+		   			<div class="contentIndentContainer"> 
+		      			<h2 class="lineOne">Miles Ahead -</h2>
+		      			<h2 class="lineTwo">With Kanban</h2>
+		   			</div> 
+				</div>
+			</div>
+			<div id="contentContainer"> 
+	            <div id="breadcrumbContainer"> 
+	               <div class="contentIndentContainer"> 
+	                  <div class="breadcrumb"><a href="http://miles.no">Miles</a>  
+	                     				&gt; <strong>Course</strong>
+	                  </div> 
+	               </div> 
+	            </div>
+	            
+	            #{menu /}
+	        	#{doLayout /}
+		        
+		     </div> 
+        	</div>
+    </body>
+</html>

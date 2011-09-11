@@ -1,0 +1,51 @@
+#{if flash.success}
+	<h2>Future interest in Kanban course registered </h2>
+	<p>Thanks for registering your future interest in attending a Kanban course with David Anderson. 
+	An email has been sent to your account as a confirmation. We will contact you when
+	we know when the next course will take place. </p>
+#{/if}
+#{else}
+	<p>
+	<strong>
+		Sorry, this course is full. If you want to receive information about future Kanban courses, you may register your interest here:
+	</strong>
+	</p>
+	<h2>Register interest</h2>
+
+#{form @Interest.register()}
+		<input type="hidden" name="courseName" id="courseName" value="KanbanInterest"/>
+		<table>
+	#{field 'name'}
+	<tr>
+		
+		<td>Navn</td>
+        <td>
+        <input type="text" name="${field.name}" size="20" value="${flash['name']}" /> 
+         <span class="error">#{error 'name' /}</span>
+    	</td>
+    	#{/field}
+    </tr>
+    <tr>
+	    #{field 'email'}
+	    <td>
+	       E-post </td>
+	    <td>
+	    	<input type="text" name="${field.name}" size="20" value="${flash['email']}" class="${field.errorClass}" />
+	    	<span class="error">#{error 'email' /}</span>
+	    </td>
+    </tr>
+    #{/field}
+     #{field 'company'}
+    <tr>
+        <td>Company </td>
+        <td><input type="text" name="${field.name}" size="20" value="${flash['company']}"/></td>
+    </tr>
+    #{/field}
+    </table>
+    <p>
+        <input type="submit" value="Register" />
+    </p>
+
+#{/form} 
+	
+#{/else}

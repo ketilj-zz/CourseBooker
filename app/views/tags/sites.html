@@ -1,0 +1,7 @@
+<h2>Web sites</h2>
+
+	<ul>
+	#{list items:_websites, as:'website'}
+			<li><a href="${website.url}">${website.name}</a></li>
+	#{/list}
+	</ul>

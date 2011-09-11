@@ -1,0 +1,6 @@
+09-08 22:01:51 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Table "USER" not found; SQL statement:
+select count(*) as col_0_0_ from User user0_ limit ? [42102-149]
+09-10 22:09:03 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "USER" not found; SQL statement:
+select count(*) as col_0_0_ from User user0_ limit ? [42102-149]

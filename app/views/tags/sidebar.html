@@ -1,0 +1,42 @@
+<div class="contentIndentContainer">
+     		<div id="instructor">
+     			<h2>Instructor - ${_course.instructor.name}</h2>
+     			<img height="129" width="97" src="@{Application.getPicture(_course.instructor.id)}" title="" alt=""></img> 
+    			<p>${_course.instructor.resume}</p>
+    			<p><a href="@{Application.instructor(_course.instructor.id)}">More info...</a></p>
+    		</div>
+       		<div id="courseInfo">
+       			
+       			<h2>${_course.type()} information</h2>
+       			<h3>Participants</h3>
+       			<p>Limited to ${_course.maxNumberOfParticipants}</p>
+       			<h3>Price</h3>
+       			<p>${_course.price()}</p>
+   				<h3>When</h3> 
+   				
+				<p>${_course.startDate.format('MMMMM dd')} - ${_course.endDate()?.format('dd yyyy')}&nbsp;${_course.time()}</p>
+   				
+   				<p><b>${_course.additionalInfo()}</b></p>
+   				<h3>Where</h3>
+				<div class="businessCard"> 
+      				<dl>
+			         <dt><a href=${_course.location.url}>${_course.location.name}</a></dt>			 
+			         <dt>Address:</dt> 
+			         <dd> 
+			            <ul> 
+			               <li>${_course.location.address}</li> 
+			               <li>${_course.location.postal}</li> 
+			            </ul> 
+			         </dd> 
+			         <dt>Phone number:</dt> 
+			         	<dd>${_course.location.telephoneNumber}</dd>
+			         
+		      		</dl> 
+		   		</div>
+   				
+   			</div>
+   			<div id="mapView">
+   				<!-- <iframe class="googleMapView"width="250" height="250" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Kristian+IV's+gate+7+oslo&amp;sll=37.0625,-95.677068&amp;sspn=38.775203,78.662109&amp;ie=UTF8&amp;hq=&amp;hnear=Kristian+IVs+gate+7,+Sentrum,+0164+Oslo,+Norway&amp;ll=59.913429,10.740681&amp;spn=0.012779,0.025749&amp;z=14&amp;output=embed"></iframe><br /><small><a href="http://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Kristian+IV's+gate+7+oslo&amp;sll=37.0625,-95.677068&amp;sspn=38.775203,78.662109&amp;ie=UTF8&amp;hq=&amp;hnear=Kristian+IVs+gate+7,+Sentrum,+0164+Oslo,+Norway&amp;ll=59.913429,10.740681&amp;spn=0.012779,0.025749&amp;z=14" style="color:#0000FF;text-align:left">View Larger Map</a></small> -->
+   				<iframe class="googleMapView"width="250" height="250" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="${_course.location.map}"></iframe><br /><small><a href="${_course.location.mapUrl}" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+   			</div>
+        	</div>
